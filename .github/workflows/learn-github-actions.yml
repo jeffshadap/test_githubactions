@@ -8,5 +8,4 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '14'
-      - run: npm install bats
-      - run: node_modules\.bin\bats -v
+      - run: npm start
