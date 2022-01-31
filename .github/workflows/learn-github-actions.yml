@@ -18,4 +18,13 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: jeff-artificats
-          path: node_modules/@babel
+          path: node_modules/@babel/code-frame
+
+      - uses: actions/download-artifact@v2
+        with:
+          name: jeff-artificats
+          path: path/to/artifact
+          
+      - name: Display structure of downloaded files
+        run: ls -R
+        working-directory: path/to/artifact
