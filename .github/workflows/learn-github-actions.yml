@@ -18,4 +18,6 @@ jobs:
           First_Name: Mona
       - name : "Actor"
         run: echo "Actor is ${{env.GITHUB_ACTOR}}"
+      - name : "Env"
+        run: env
       
