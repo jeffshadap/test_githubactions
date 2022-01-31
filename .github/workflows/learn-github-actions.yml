@@ -16,4 +16,6 @@ jobs:
         run: echo "${{env.Greeting}} ${{env.First_Name}}. Today is ${{env.DAY_OF_WEEK}}!"
         env:
           First_Name: Mona
+      - name : "Actor"
+        run: echo "Actor is ${{env.GITHUB_ACTOR}}"
       
