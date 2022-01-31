@@ -26,5 +26,5 @@ jobs:
           path: path/to/artifact
           
       - name: Display structure of downloaded files
-        run: ls -R
+        run: dir
         working-directory: path/to/artifact
