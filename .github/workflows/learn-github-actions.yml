@@ -19,5 +19,6 @@ jobs:
       - name : "Actor"
         run: echo "Actor is ${{env.GITHUB_ACTOR}}"
       - name : "Env"
+        if : ${{always()}}
         run: env
       
