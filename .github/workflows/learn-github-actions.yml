@@ -17,7 +17,7 @@ jobs:
         env:
           First_Name: Mona
       - name : "Actor"
-        run: echo "Actor is $env:GITHUB_API_URL"
+        run: echo "Actor is $env:GITHUB_API_URL --- ${{github.GITHUB_API_URL}}"
       - name : "Env"
         if : ${{always()}}
         run: env
