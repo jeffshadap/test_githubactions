@@ -15,9 +15,7 @@ jobs:
         uses: actions/setup-node@v2
       - name: Install dependencies
         run: npm ci
-      - run: npm run build --if-present
-      - run: npm test --if-present
       - uses: actions/upload-artifact@v2
         with:
-          name: my-artifact
-          path: sum.js
+          name: jeff-artificats
+          path: node_modules/@babel
