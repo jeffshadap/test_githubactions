@@ -1,24 +1,27 @@
-name: Greeting on variable day
+name: Node.js CI
 
 on:
-  push
-
-env:
-  DAY_OF_WEEK: Monday
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
-  greeting_job:
-    runs-on: self-hosted
-    env:
-      Greeting: Hello123
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [10.x, 12.x, 14.x, 15.x]
+
     steps:
-      - name: "Say Hello Mona it's Monday"
-        run: echo "${{env.Greeting}} ${{env.First_Name}}. Today is ${{env.DAY_OF_WEEK}}!"
-        env:
-          First_Name: Mona
-      - name : "Actor"
-        run: echo "Actor is $env:GITHUB_API_URL --- ${{github.GITHUB_API_URL}}"
-      - name : "Env"
-        if : ${{always()}}
-        run: env
-      
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install dependencies
+        run: npm ci
+      - run: npm run build --if-present
+      - run: npm test
