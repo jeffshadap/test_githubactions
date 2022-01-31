@@ -1,10 +1,19 @@
-name: learn-github-actions
-on: [push]
-env: 
-  NAME: jeff
+name: Greeting on variable day
+
+on:
+  push
+
+env:
+  DAY_OF_WEEK: Monday
+
 jobs:
-  check-bats-version:
-    runs-on: self-hosted
+  greeting_job:
+    runs-on: ubuntu-latest
+    env:
+      Greeting: Hello
     steps:
-      - run: echo "Hello11123 $NAME ${{env.NAME}}"
+      - name: "Say Hello Mona it's Monday"
+        run: echo "$Greeting $First_Name. Today is $DAY_OF_WEEK!"
+        env:
+          First_Name: Mona
       
