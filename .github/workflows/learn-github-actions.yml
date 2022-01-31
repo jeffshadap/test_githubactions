@@ -4,17 +4,5 @@ jobs:
   check-bats-version:
     runs-on: self-hosted
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '14'
-      - run: npm start
+      - run: echo "Hello"
       
-      - run: mkdir -p path/to/artifact
-      
-      - run: echo hello > path/to/artifact/world.txt
-      
-      - uses: actions/upload-artifact@v2
-        with:
-          name: my-artifact
-          path: path/to/artifact/world.txt
