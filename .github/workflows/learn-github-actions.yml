@@ -1,8 +1,10 @@
 name: learn-github-actions
 on: [push]
+env: 
+  NAME: jeff
 jobs:
   check-bats-version:
     runs-on: self-hosted
     steps:
-      - run: echo "Hello11123"
+      - run: echo "Hello11123 $NAME"
       
