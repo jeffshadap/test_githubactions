@@ -10,7 +10,7 @@ jobs:
   greeting_job:
     runs-on: self-hosted
     env:
-      Greeting: Hello
+      Greeting: Hello123
     steps:
       - name: "Say Hello Mona it's Monday"
         run: echo "${{env.Greeting}} ${{env.First_Name}}. Today is ${{env.DAY_OF_WEEK}}!"
